@@ -51,10 +51,10 @@ def set_inputs(S: float, R: float, B: float) -> None:
 
 def move_figure(x, y):
     """ Move figure's upper left corner to pixel (x, y) """
-    backend = matplotlib.get_backend()
-    if backend == 'TkAgg':
+    backend = matplotlib.get_backend().lower()
+    if backend == 'TkAgg'.lower():
         fig.canvas.manager.window.wm_geometry("+%d+%d" % (x, y))
-    elif backend == 'WXAgg':
+    elif backend == 'WXAgg'.lower():
         fig.canvas.manager.window.SetPosition((x, y))
     else:
         # This works for QT and GTK

@@ -1,2 +1,2 @@
-ortools>=7.1.6720
+ortools>=7.3.7083
 numpy>=1.19.5
